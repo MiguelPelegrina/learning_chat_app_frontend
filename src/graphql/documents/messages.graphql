@@ -1,0 +1,5 @@
+mutation PostMessage($content: String!) {
+  postMessage(content: $content) {
+    content
+  }
+}
