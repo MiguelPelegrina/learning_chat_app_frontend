@@ -1,4 +1,31 @@
-# LearningChatAppFrontend
+# Frontend for a chat application (WIP)
+
+The intent of this project is to learn to implement certain technologies for Web Design.
+
+I want to use the following tools:
+API:
+- GraphQL
+
+Communication:
+- Websocket
+
+Security
+- OAuth
+
+Design
+- ng zorro/primeng/material design
+
+DB
+- IndexedDB
+
+CSS
+- SCSS
+- ng bootstrap
+
+Additional tools:
+- NgRx: Signal store, Component Store 
+
+
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.5.
 
