@@ -1,3 +1,15 @@
-@for (message of messages; track $index) {
-  <p>{{message.content}} {{message.status}}</p>
-}
+<div #scrollContainer class="scroll-container">
+  @for (message of messages; track $index) {
+  <div class="container d-flex align-items-center">
+    <mat-card appearance="outlined">
+      <mat-card-header class="d-flex flex-row-reverse">
+        <nz-icon [nzType]="message.status | messageStatus"></nz-icon>
+        {{ message.timestamp | date }}
+      </mat-card-header>
+      <mat-card-content class="align-items-end">
+        {{ message.content }}
+      </mat-card-content>
+    </mat-card>
+  </div>
+  }
+</div>

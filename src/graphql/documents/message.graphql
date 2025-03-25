@@ -1,0 +1,7 @@
+mutation PostMessage($id: ID!, $content: String!, $timestamp: String!) {
+  postMessage(id: $id, content: $content, timestamp: $timestamp) {
+    id
+    content
+    timestamp
+  }
+}

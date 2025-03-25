@@ -1,4 +1,7 @@
-<!-- TODO Make scrollable -->
-<app-message-list [messages]="store.messages()"></app-message-list>
-<!-- TODO Scroll to see this -->
-<app-message-add (messageEmitter)="sendMessage($event)"></app-message-add>
+<!-- TODO
+  - "paginate" messages
+-->
+<div>
+  <app-message-list [messages]="store.messages()"></app-message-list>
+  <app-message-add (messageEmitter)="sendMessage($event)"></app-message-add>
+</div>

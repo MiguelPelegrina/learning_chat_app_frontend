@@ -1,0 +1,9 @@
+.container {
+  margin: 4px;
+  padding: 4px;
+}
+
+.scroll-container {
+  height: calc(100vh - 150px);
+  overflow-y: auto;
+}

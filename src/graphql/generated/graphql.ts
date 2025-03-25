@@ -259,9 +259,10 @@ export enum ErrorType {
 
 export type Message = {
   __typename?: 'Message';
-  content?: Maybe<Scalars['String']['output']>;
-  id?: Maybe<Scalars['ID']['output']>;
+  content: Scalars['String']['output'];
+  id: Scalars['ID']['output'];
   status: MessageStatus;
+  timestamp: Scalars['String']['output'];
 };
 
 export enum MessageStatus {
@@ -278,12 +279,20 @@ export type Mutation = {
 
 export type MutationPostMessageArgs = {
   content: Scalars['String']['input'];
+  id: Scalars['ID']['input'];
+  timestamp?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type Query = {
   __typename?: 'Query';
   _service: _Service;
+  getMessagesSorted: Array<Maybe<Message>>;
   messages?: Maybe<Array<Maybe<Message>>>;
+};
+
+
+export type QueryGetMessagesSortedArgs = {
+  order: Scalars['String']['input'];
 };
 
 
@@ -302,16 +311,20 @@ export type _Service = {
 };
 
 export type PostMessageMutationVariables = Exact<{
+  id: Scalars['ID']['input'];
   content: Scalars['String']['input'];
+  timestamp: Scalars['String']['input'];
 }>;
 
 
-export type PostMessageMutation = { __typename?: 'Mutation', postMessage?: { __typename?: 'Message', content?: string | null } | null };
+export type PostMessageMutation = { __typename?: 'Mutation', postMessage?: { __typename?: 'Message', id: string, content: string, timestamp: string } | null };
 
 export const PostMessageDocument = gql`
-    mutation PostMessage($content: String!) {
-  postMessage(content: $content) {
+    mutation PostMessage($id: ID!, $content: String!, $timestamp: String!) {
+  postMessage(id: $id, content: $content, timestamp: $timestamp) {
+    id
     content
+    timestamp
   }
 }
     `;
