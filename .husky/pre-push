@@ -1,0 +1,2 @@
+pnpm nx run-many --target=build --all
+pnpm nx run-many --target=lint --all

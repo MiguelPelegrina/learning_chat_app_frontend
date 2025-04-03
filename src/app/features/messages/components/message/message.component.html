@@ -2,6 +2,9 @@
   - "paginate" messages
 -->
 <div>
+  @defer () {
   <app-message-list [messages]="store.messages()"></app-message-list>
+
+  }
   <app-message-add (messageEmitter)="sendMessage($event)"></app-message-add>
 </div>
